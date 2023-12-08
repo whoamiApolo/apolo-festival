@@ -1,0 +1,137 @@
+.post {
+  background:  var(--background-100-color);
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+/* só será aplicado caso haja outro post, um post anterior ao post atual*/
+.post + .post {
+  margin-top: 2rem;
+}
+
+.content {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+  text-align: justify;
+}
+
+.content p {
+  margin-top: 1rem;
+}
+
+.content a {
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: var(--gray-300);
+}
+
+/* header que está diretamente dentro do post */
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post > header time {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*
+.authorInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+*/
+
+.authorInfo strong {
+  display: block;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.authorInfo span {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.commentForm {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-800);
+}
+
+.commentForm > strong {
+  line-height: 1.6;
+  color: var(--gray-100);
+}
+
+.commentForm textarea {
+  width: 100%;
+  background: var(--gray-700);
+  border: 0;
+  resize: 0;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+/*esconder button*/
+.commentForm footer {
+  visibility: hidden;
+  max-height: 0;
+ 
+  /*  text-align: end;  */
+}
+
+/*se houver foco em qualquer input, textarea... será aplicado um estilo.*/
+.commentForm:focus-within footer {
+    visibility: visible;
+    max-height: none; /* initial/100%/unset */
+}
+
+.commentForm button[type="submit"] {
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--secondary-color);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+    
+  width: 100%;
+}
+
+.commentForm button[type="submit"]:not(:disable):hover {
+    background: var(--secondary-color);
+
+}
+
+.commentForm button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.commentList {
+    margin-top: 2rem;
+}
